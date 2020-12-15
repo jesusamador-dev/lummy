@@ -3,6 +3,7 @@ import ListMessages from "./ListMessages";
 import imgSend from '../../images/send.svg';
 import imgClose from '../../images/cerrar.svg';
 import imgChat from '../../images/chat.svg';
+import './chat.css';
 
 const Chat = props => {
   const scrollMessages = useRef(null);
