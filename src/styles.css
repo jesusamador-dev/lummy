@@ -237,6 +237,179 @@ img {
 }
 
 
+/*Footer*/
+
+.footer {
+    margin-top: 3rem;
+    background-color: #f8fbf2;
+}
+
+.footer__brand img {
+    max-width: 130px;
+}
+
+.footer__brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__item {
+    padding: 2rem 0;
+}
+
+.footer hr {
+    margin: 1rem 0;
+}
+
+.footer__title {
+    margin-bottom: 1rem;
+}
+
+.footer__container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1280px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.footer__copyright {
+    text-align: center;
+    padding: 1rem 0 2rem 0;
+}
+
+.footer__contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__link {
+    color: #1a1a1a;
+    margin: .2rem 0;
+}
+
+.timetable {
+    list-style: none;
+    width: 70%;
+    margin: 0 auto 0 0;
+}
+
+.timetable li {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: .5rem 0;
+}
+
+
+/* sección: reservation */
+
+.reservation {
+    margin: 5rem 0;
+}
+
+.reservation__container {
+    width: 90%;
+    max-width: 1280px;
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    margin: 0 auto;
+    gap: 3rem;
+}
+
+.reservation__image {
+    display: flex;
+    align-items: center
+}
+
+.reservation__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reservation__image img {
+    max-width: 550px;
+    margin: 0 2rem;
+}
+
+.reservation__title {
+    font-size: 2.3rem;
+    letter-spacing: 1.3px;
+    margin-bottom: 1.4rem;
+}
+
+.reservation__text {
+    font-size: 1.1rem;
+    margin-bottom: 1.4rem;
+}
+
+
+/* sección: menu */
+
+.menu {
+    margin: 5rem 0;
+}
+
+.menu__container {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 3rem;
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.menu__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.menu__title {
+    font-size: 2.3rem;
+    letter-spacing: 1.3px;
+    margin-bottom: 1.4rem;
+}
+
+.menu__text {
+    font-size: 1.1rem;
+    margin-bottom: 1.4rem;
+}
+
+.card__header {
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+}
+
+.card__body {
+    padding: .5rem .5rem 0;
+}
+
+.card__text {
+    color: #666666;
+    margin: .5rem 0;
+}
+
+.card__footer {
+    padding: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-price {
+    width: 100px;
+    height: 30px;
+    margin: 0 0 0 auto;
+    font-size: 1rem;
+    border-radius: 15px;
+}
+
+
 /* animation */
 
 @keyframes float {
@@ -276,4 +449,108 @@ img {
     animation-iteration-count: infinite;
     animation-duration: 5s;
     animation-fill-mode: both;
+}
+
+.nav__button {
+    display: none
+}
+
+.menu__mobile {
+    display: none;
+}
+
+
+@media only screen and (max-width: 500px) {
+
+    .nav {
+        display: none
+    }
+    .nav__button {
+        z-index: 10;
+    }
+    .mancha-1 {
+        width: 100%;
+    }
+    .menu__mobile {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        height: 100%;
+        width: 80%;
+        top: 0;
+        left: 0;
+        max-width: 300px;
+        background-color: #fff;
+        transform: translateX(-100%);
+        transition: .3s;
+        z-index: 3;
+    }
+    .nav__mobile {
+
+    }
+        .menu__open {
+                transform: translateX(0);
+        }
+    .nav__button {
+        display: block;
+    }
+
+    .hero-container, 
+    .menu__container, 
+    .speciality__container, 
+    .reservation__container, 
+    .footer__container {
+        grid-template-columns: 1fr;
+    }
+    .menu__items {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    .hero, .menu {
+        margin-top: 1rem
+    }
+    .reservation {
+        margin-top: 2rem;
+
+        margin-bottom: 2rem
+    }
+    .speciality {
+        margin-top: 1rem;
+    }
+    .hero__title,
+    .reservation__title,
+    .menu__title,
+    .speciality__title {
+        font-size: 1.5rem;
+    }
+    .hero__text,
+    .reservation__text,
+    .menu__text,
+    .speciality__description {
+        font-size: 1.1rem;
+    }
+    .speciality__description {
+        padding: 0 1rem;
+    }
+
+    .hero__image img,
+    .reservation__image img{
+        max-width: 250px;
+        margin: 0;
+    }
+
+    .hero__image img {
+        margin-top: 2rem
+    }
+    .timetable {
+        width: 100%;
+    }
+    
+    .hero__image, .reservation__image {
+        justify-content: center
+    }
+
+    .btn-price {
+        width: 80px
+    }
 }

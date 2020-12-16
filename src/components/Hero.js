@@ -1,6 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ChatContext from "../contexts/ChatContext";
 import imgCake from "../images/cake.png";
 const Hero = () => {
+
+  const chatContext = useContext(ChatContext);
+
+  const sendMessageReservation = () => {
+    chatContext.toggleChatOpen(true);
+    chatContext.setSending(true);
+    const message = {
+      text: "Hola, quiero una reservación",
+      isBot: false
+    };
+   chatContext.setResponses(responses => [...responses, message]);
+  }
+
   return (
     <section className="hero">
       <div className="hero-container">
@@ -11,7 +25,7 @@ const Hero = () => {
           <p className="hero__text">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci architecto consequuntur quo nihil consectetur
           </p>
-          <button className="btn">Ordenar ahora</button>
+          <button className="btn" onClick={sendMessageReservation}>Reservar ahora</button>
         </div>
         <div className="hero__image">
           <img className="float shadow-image" src={ imgCake } alt="Imagén de un pastelillo"/>

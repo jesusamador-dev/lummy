@@ -3,12 +3,12 @@ import React from 'react';
 const Message=({ message }) => {
   return (
     <>
-      { (message&&message.text!="") ? (message?.isBot ? (
-        <li className="self">
+      { (message&&message.text!=="") ? (message?.isBot ? (
+        <li className="message self">
           { message?.text}
         </li>
       ) : (
-          <li className="other">
+          <li className="message other">
             { message?.text}
           </li>
         )

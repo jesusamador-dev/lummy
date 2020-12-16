@@ -1,9 +1,20 @@
-import React from 'react';
-import imgDonouts from '../images/donouts.png';
+import React, { useContext } from 'react';
+import ChatContext from "../contexts/ChatContext";
+import imgDonuts from '../images/donouts.png';
 import imgPay from '../images/pay.png';
 import imgMacarons from '../images/macarons.png';
 
 const Speciality = () => {
+  const chatContext = useContext(ChatContext);
+  const sendMessageOrder = (product) => {
+    chatContext.toggleChatOpen(true);
+    chatContext.setSending(true);
+    const message = {
+      text: `Hola, deseo ordenar: ${product}`,
+      isBot: false
+    };
+    chatContext.setResponses(responses => [...responses, message]);
+  }
   return (
     <section className="speciality">
       <div className="speciality__header">
@@ -14,11 +25,12 @@ const Speciality = () => {
       </div>
       <div className="speciality__container">
         <div className="speciality__item">
-          <img className="float shadow-image" src={ imgDonouts }  alt="" />
-          <h3 className="speciality__subtitle">Donouts</h3>
+          <img className="float shadow-image" src={ imgDonuts }  alt="" />
+          <h3 className="speciality__subtitle">Donas</h3>
           <p className="speciality__text">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, pariatur?
           </p>
+          <button onClick={() => { sendMessageOrder("donas") }} className="btn">Ordenar ahora</button>
         </div>
         <div className="speciality__item">
           <img className="float shadow-image" src={imgPay} alt="" />
@@ -26,6 +38,7 @@ const Speciality = () => {
           <p className="speciality__text">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, pariatur?
           </p>
+          <button onClick={() => { sendMessageOrder("pay") }} className="btn">Ordenar ahora</button>
         </div>
         <div className="speciality__item">
           <img className="float shadow-image" src={imgMacarons} alt="" />
@@ -33,6 +46,7 @@ const Speciality = () => {
           <p className="speciality__text">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, pariatur?
           </p>
+          <button onClick={() => { sendMessageOrder("macarons") }} className="btn">Ordenar ahora</button>
         </div>
       </div>
     </section>
