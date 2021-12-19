@@ -13,3 +13,6 @@ Es una landing page con un ChatBot integrado, el chat está creado con [DialogFl
 #### cd lummy
 #### npm install
 #### npm run dev
+
+## Imagen
+![Lummy](lummy-banner.png?raw=true "Lummy Chatbot")
