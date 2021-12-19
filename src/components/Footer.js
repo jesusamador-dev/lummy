@@ -53,7 +53,7 @@ const Footer = () => {
       </div>
       <hr />
       <div className="footer__copyright">
-      <p>Jazmín Molina ©</p>
+      <p>Jesús Amador ©</p>
       </div>
     </footer>
   );
